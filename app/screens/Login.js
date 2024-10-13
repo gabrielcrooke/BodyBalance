@@ -4,13 +4,17 @@ import {
     InnerContainer, 
     PageLogo, 
     PageTitle } from '../../components/styles';
-
+import { Text } from 'react-native';
+import {useFonts} from 'expo-font'
 
 const Login = () => {
+  const [fontsLoaded] = useFonts({
+    'Poppins-Bold': require('../../assets/fonts/Poppins-Bold.ttf')
+  })
   return (
     <StyledContainer>
         <InnerContainer>
-            <PageTitle>Inicia sesión</PageTitle>
+            <PageTitle style={{fontFamily:"Poppins-Bold"}}>Inicia sesión</PageTitle>
         </InnerContainer>
     </StyledContainer>
   );
