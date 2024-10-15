@@ -24,8 +24,8 @@ const {primary, secondary, tertiary, darkLight, lightGreen, darkGreen, lightBlue
 //Main Container
 export const StyledContainer = styled.View`
 flex: 1;
-//padding: 25px;
-//padding-top: ${StatusBarHeight}px;
+padding: 25px;
+padding-top: ${StatusBarHeight}px;
 background-color: ${primary};
 `;
 
@@ -61,28 +61,23 @@ export const StyledFormArea = styled.View`
 width: 90%;
 `
 export const StyledTextInput = styled.TextInput`
+top: 20px;
 background-color: ${secondary};
 padding: 15px;
 padding-left: 55px;
 padding-right: 55px;
-border-radius: 5px;
+border-radius: 7px;
 font-size: 16px;
 height: 60px;
 margin-vertical: 3px;
-margin-bottom: 10px;
+margin-bottom: 30px;
 color: ${tertiary};
 editable: true;
 `;
 
-export const StyledInputLabel = styled.Text`
-color: ${tertiary};
-font-size: 13px;
-text-align: left;
-`
-
 export const LeftIcon = styled.View`
 left: 15px;
-top: 38px;
+top: 40px;
 position: absolute;
 z-index: 1;
 `;

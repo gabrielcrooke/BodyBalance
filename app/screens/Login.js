@@ -76,9 +76,8 @@ const MyTextInput = ({label, icon, ...props}) => {
  return(
   <View>
     <LeftIcon>
-      <Octicons name={icon} size={30} color={darkBlue}/>
+      <Octicons name={icon} size={25} color={darkBlue}/>
     </LeftIcon>
-    <StyledInputLabel>{label}</StyledInputLabel>
     <StyledTextInput {...props}/>
   </View>
  );
