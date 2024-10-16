@@ -50,7 +50,7 @@ padding: 10px;
 `;
 
 export const SubTitle = styled.Text`
-font-size: 17px;
+font-size: 16px;
 margin-bottom: 30px;
 letter-spacing: 1px;
 font-weight: bold;
@@ -83,22 +83,38 @@ z-index: 1;
 `;
 
 export const RightIcon = styled.TouchableOpacity`
-left: 15px;
-top: 38px;
+right: 15px;
+top: 40px;
 position: absolute;
 z-index: 1;
 `;
 
 export const StyledButton = styled.TouchableOpacity`
 padding: 15px;
+margin-top: 25px;
 background-color: ${darkBlue};
 justify-content: center;
-border-radius: 5px;
+align-items: center;
+border-radius: 7px;
 margin-vertical: 5px;
 height: 60px;
 `;
 
 export const ButtonText = styled.Text`
 color: ${primary};
-font-size: 16px;
+font-size: 17px;
+`;
+
+export const TouchLink = styled.TouchableOpacity`
+padding: 3px;
+background-color: transparent;
+border-radius: 5px;
+align-self: flex-end;
+margin-vertical: 5px;
+color: ${darkLight};
+`;
+
+export const TouchLinkText = styled.Text`
+color: ${darkLight};
+font-size: 15px;
 `;

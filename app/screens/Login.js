@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { View } from 'react-native';
 
 //Formik
@@ -17,6 +17,8 @@ import {
     LeftIcon,
     RightIcon,
     StyledButton,
+    TouchLink,
+    TouchLinkText,
     ButtonText
      } from '../../components/styles';
 import { Text } from 'react-native';
@@ -24,12 +26,15 @@ import {FontLoader} from '../../components/FontLoader.js'
 import { StatusBar } from 'expo-status-bar';
 
 //Icons
-import {Octicons} from '@expo/vector-icons';
+import {Octicons, Ionicons} from '@expo/vector-icons';
+import { DarkTheme } from '@react-navigation/native';
 
 //Colors
-const {darkBlue, darkLight} = Colors;
+const {darkBlue, darkLight, lightBlue} = Colors;
 
 const Login = () => {
+  const [hidePassword, setHidePassword] = useState(true);
+
   return (
     <StyledContainer>
       <StatusBar style='dark'/>
@@ -43,7 +48,6 @@ const Login = () => {
             console.log(values);
           }}
           >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFormArea>
-            <FontLoader style={{fontFamily:"Poppins-Regular"}}>
             <MyTextInput 
             icon= "mail"
             placeholder= "Correo electrónico"
@@ -61,10 +65,23 @@ const Login = () => {
             onChangeText={handleChange('password')}
             onBlur={handleBlur('password')}
             value={values.password}
-            secureTextEntry={true}
+            secureTextEntry={hidePassword}
+            isPassword={true}
+            hidePassword={hidePassword}
+            setHidePassword={setHidePassword}
             />
-            </FontLoader>
-          </StyledFormArea>)}
+            <TouchLink>
+              <TouchLinkText style={{fontFamily:"Poppins-Regular"}}>
+              Recuperar Contraseña
+              </TouchLinkText>
+            </TouchLink>
+            <StyledButton>
+              <ButtonText style={{fontFamily:"Poppins-Bold"}}>
+              Inicia Sesión
+              </ButtonText>
+            </StyledButton>
+          </StyledFormArea>
+        )}
             
           </Formik>
         </InnerContainer>
@@ -72,13 +89,18 @@ const Login = () => {
   );
 };
 
-const MyTextInput = ({label, icon, ...props}) => {
+const MyTextInput = ({icon, isPassword, hidePassword, setHidePassword, ...props}) => {
  return(
   <View>
     <LeftIcon>
       <Octicons name={icon} size={25} color={darkBlue}/>
     </LeftIcon>
     <StyledTextInput {...props}/>
+    {isPassword && (
+      <RightIcon onPress={() => setHidePassword(!hidePassword)}>
+        <Ionicons name={hidePassword ? 'eye-off' : 'eye'} size={25} color={darkBlue} />
+      </RightIcon>
+    )}
   </View>
  );
 };
