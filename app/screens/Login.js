@@ -19,7 +19,12 @@ import {
     StyledButton,
     TouchLink,
     TouchLinkText,
-    ButtonText
+    ButtonText,
+    Separator,
+    Line,
+    ContainerExLoginBtn,
+    ExLoginLogo,
+    ExLoginLogoBtn
      } from '../../components/styles';
 import { Text } from 'react-native';
 import {FontLoader} from '../../components/FontLoader.js'
@@ -77,9 +82,28 @@ const Login = () => {
             </TouchLink>
             <StyledButton>
               <ButtonText style={{fontFamily:"Poppins-Bold"}}>
-              Inicia Sesión
+              Entrar
               </ButtonText>
             </StyledButton>
+            <Separator>
+              <Line/>
+              <SubTitle style={{fontFamily:"Poppins-Regular"}}>o entra con tu cuenta</SubTitle>
+              <Line/>
+            </Separator>
+            <ContainerExLoginBtn>
+              <ExLoginLogoBtn>
+                <ExLoginLogo source={require('../../assets/images/google.webp')}/>
+              </ExLoginLogoBtn>
+             
+              
+              <ExLoginLogoBtn>
+              <ExLoginLogo source={require('../../assets/images/apple.png')}/>
+              </ExLoginLogoBtn>
+
+              <ExLoginLogoBtn>
+              <ExLoginLogo source={require('../../assets/images/facebook.png')}/>
+              </ExLoginLogoBtn>
+            </ContainerExLoginBtn>
           </StyledFormArea>
         )}
             

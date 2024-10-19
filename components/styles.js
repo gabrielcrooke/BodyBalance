@@ -24,8 +24,9 @@ const {primary, secondary, tertiary, darkLight, lightGreen, darkGreen, lightBlue
 //Main Container
 export const StyledContainer = styled.View`
 flex: 1;
-padding: 25px;
+padding: 15px;
 padding-top: ${StatusBarHeight}px;
+padding-top: 35px;
 background-color: ${primary};
 `;
 
@@ -50,7 +51,7 @@ padding: 10px;
 `;
 
 export const SubTitle = styled.Text`
-font-size: 16px;
+font-size: 13spx;
 margin-bottom: 30px;
 letter-spacing: 1px;
 font-weight: bold;
@@ -97,7 +98,7 @@ justify-content: center;
 align-items: center;
 border-radius: 7px;
 margin-vertical: 5px;
-height: 60px;
+height: 54px;
 `;
 
 export const ButtonText = styled.Text`
@@ -118,3 +119,42 @@ export const TouchLinkText = styled.Text`
 color: ${darkLight};
 font-size: 15px;
 `;
+
+export const Separator = styled.View`
+margin-top: 25px;
+flex-direction: row;
+justify-content: center;
+`;
+
+export const Line = styled.View`
+height: 1px;
+width: 27%;
+background-color: ${darkLight};
+ margin-vertical: 10px;
+`;
+
+export const ContainerExLoginBtn =styled.View`
+flex-direction: row;
+justify-content: space-between;
+`;
+
+export const ExLoginLogoBtn = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding-vertical: 9px;
+  padding-horizontal: 38px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: ${darkLight};
+`;
+
+export const ExLoginLogo = styled.Image`
+width: 30px;
+height: 30px;
+`;
+
+
+
+
+
