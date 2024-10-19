@@ -46,7 +46,14 @@ const Login = () => {
         <InnerContainer>
           <FontLoader>
             <PageTitle style={{fontFamily:"Poppins-Bold"}}>Inicia sesión</PageTitle>
+            <Separator>
             <SubTitle style={{fontFamily:"Poppins-Regular"}}>¿Aún no tienes una cuenta?</SubTitle>
+            <TouchLink>
+              <TouchLinkText style={{fontFamily:"Poppins-Regular"}}>
+              Regístrate
+              </TouchLinkText>
+            </TouchLink>
+            </Separator>
             </FontLoader>
           <Formik initialValues={{email: '', password: ''}}
           onSubmit={(values) => {
